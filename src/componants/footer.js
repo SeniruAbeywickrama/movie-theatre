@@ -38,7 +38,7 @@ function Footer() {
 
                 <div className="md:text-left text-center">
                     <p className="text-sm font-normal text-zinc-500">
-                        Copyright © 2022 Amadeus Hotels. All rights reserved.
+                        Copyright © {new Date().getFullYear()} Amadeus Hotels. All rights reserved.
                     </p>
                 </div>
 
