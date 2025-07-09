@@ -18,7 +18,7 @@ function MovieLibrary() {
     ];
 
     return (
-        <section id="movies" className="min-h-screen bg-zinc-800">
+        <section id="movies" className="min-h-screen bg-zinc-900">
             <br/>
             <br/>
             <br/>
@@ -26,7 +26,7 @@ function MovieLibrary() {
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 text-center">
                     {/* Item 1 */}
                     <div>
-                        <h2 className="text-4xl font-normal text-white sm:text-green">Collect your favourites</h2>
+                        <h2 className="text-4xl font-normal text-white">Collect your favourites</h2>
                     </div>
 
                     {/* Item 2 */}
