@@ -10,7 +10,7 @@ function Hero() {
                         muted
                         playsInline
                     >
-                        <source src="/Assets/Videos/Header Video.mp4" type="video/mp4" />
+                        <source src="/Assets/Videos/Header Video Cropped.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

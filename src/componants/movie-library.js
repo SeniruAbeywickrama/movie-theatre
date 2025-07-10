@@ -1,21 +1,30 @@
+import {useState} from "react";
+
 function MovieLibrary() {
-    const cards = [
-        {
-            path : '/Assets/Images/Batman.jpg',
-            name : 'Batman Returns',
-            description : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…'
-        },
-        {
-            path : '/Assets/Images/Wild West.jpg',
-            name : 'Wild Wild West',
-            description : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…'
-        },
-        {
-            path : '/Assets/Images/Spiderman.jpg',
-            name : 'The Amazing Spiderman',
-            description : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…'
-        },
-    ];
+
+    const [cardData, setCardData] = useState(
+        [
+            {
+                path : '/Assets/Images/Batman.jpg',
+                name : 'Batman Returns',
+                description : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…'
+            },
+            {
+                path : '/Assets/Images/Wild West.jpg',
+                name : 'Wild Wild West',
+                description : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…'
+            },
+            {
+                path : '/Assets/Images/Spiderman.jpg',
+                name : 'The Amazing Spiderman',
+                description : 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…'
+            },
+        ]
+    );
+
+    const handleRemoveCard = (indexTo) => {
+        setCardData(cardData.filter((_, index) => index !== indexTo));
+    }
 
     return (
         <section id="movies" className="min-h-screen bg-zinc-900">
@@ -53,9 +62,9 @@ function MovieLibrary() {
             <hr className="border-t border-white-700  mt-2 mx-auto w-3/4 mb-3" />
             <div className="flex justify-between items-center px-5 py-5">
                 <div className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-14 text-center">
-                    {cards.map((card, index) => (
+                    {cardData.map((card, index) => (
                         <div key={index} className="relative bg-zinc-700 shadow-lg text-left h-auto text-white overflow-y-auto min-h-full">
-                            <button className="absolute top-3 right-3 z-10 bg-zinc-800 p-2 hover:bg-zinc-600 transition">
+                            <button className="absolute top-3 right-3 z-10 bg-zinc-800 p-2 hover:bg-zinc-600 transition" onClick={() => handleRemoveCard(index)}>
                                 <img src="/Assets/Icons/Close White.svg" alt="Close" className="h-4 w-4"/>
                             </button>
                             <img
